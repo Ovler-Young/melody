@@ -97,10 +97,6 @@ class SchedulerService {
         this.jobs.set(jobKey, schedule.scheduleJob(rule, async () => {
             logger.info(`Start cloud sync for account ${uid}`);
             const playlists = await getUserAllPlaylist(uid);
-            if (!playlists) {
-                logger.warn(`Failed to get playlists for account ${uid}`);
-                return;
-            }
             // Filter playlists based on user preference
             const playlistsToSync = account.config.playlistSyncToWyCloudDisk.onlyCreatedPlaylists
                 ? playlists.filter(p => p.isCreatedByMe)
