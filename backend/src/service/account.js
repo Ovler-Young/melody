@@ -20,6 +20,7 @@ const defaultConfig = {
           frequency: 1,
           frequencyUnit: "day",
         },
+        onlyCreatedPlaylists: true,
         syncWySong: true,
         syncNotWySong: false,
         soundQualityPreference: SoundQuality.High,
