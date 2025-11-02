@@ -56,10 +56,6 @@ class SchedulerService {
                     continue;
                 }
                 const playlists = await getUserAllPlaylist(uid);
-                if (!playlists) {
-                    logger.warn(`Failed to get playlists for account ${uid}`);
-                    continue;
-                }
                 for (const playlist of playlists) {
                     logger.info(`Start sync playlist ${playlist.id} to local for account ${uid}`);
                     await syncPlaylist(uid, sourceConsts.Netease.code, playlist.id);
